@@ -8,10 +8,11 @@ import { MAX_JSON_SIZE, PORT, REQUEST_LIMIT, REQUEST_MESSAGE, REQUEST_TIME, WEB_
 import router from "./src/routes/api.js";
 
 
+
 const app = express();
 
 //Default Middleware
-app.use(cors());
+app.use(cors(['http://localhost:8000']));
 app.use(express.json({limit: MAX_JSON_SIZE}));
 app.use(helmet());
 app.use(cookieParser());
